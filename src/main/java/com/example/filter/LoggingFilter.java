@@ -25,7 +25,7 @@ public class LoggingFilter implements ContainerRequestFilter, ContainerResponseF
 
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
-        LOGGER.info("═══════════════════════════════════════");
+        LOGGER.info("══════════════════════════════════");
         LOGGER.info("📤 INCOMING REQUEST");
         LOGGER.info("   Method: " + requestContext.getMethod());
         LOGGER.info("   URI: " + requestContext.getUriInfo().getAbsolutePath());
