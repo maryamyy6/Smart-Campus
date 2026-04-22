@@ -25,7 +25,7 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 public class RoomResource {
     
-    // PUBLIC STATIC STORAGE - accessible by SensorResource
+    //  Public static storage
     public static ConcurrentHashMap<String, Room> rooms = new ConcurrentHashMap<>();
     public static ConcurrentHashMap<String, List<String>> roomSensors = new ConcurrentHashMap<>();
 
@@ -65,7 +65,7 @@ public class RoomResource {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
         
-        // Business logic: Cannot delete room with active sensors
+        
         List<String> sensors = roomSensors.get(roomId);
         if (sensors != null && !sensors.isEmpty()) {
             throw new RoomNotEmptyException("Cannot delete room with " + sensors.size() + " active sensor(s)");
@@ -76,7 +76,7 @@ public class RoomResource {
         return Response.noContent().build();
     }
     
-    // Helper method for SensorResource
+    
     public static boolean roomExists(String roomId) {
         return rooms.containsKey(roomId);
     }

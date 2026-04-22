@@ -25,8 +25,7 @@ public class LoggingFilter implements ContainerRequestFilter, ContainerResponseF
 
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
-        LOGGER.info("══════════════════════════════════");
-        LOGGER.info("📤 INCOMING REQUEST");
+        LOGGER.info("Incoming Request");
         LOGGER.info("   Method: " + requestContext.getMethod());
         LOGGER.info("   URI: " + requestContext.getUriInfo().getAbsolutePath());
         if (requestContext.getUriInfo().getQueryParameters().size() > 0) {
@@ -37,10 +36,10 @@ public class LoggingFilter implements ContainerRequestFilter, ContainerResponseF
     @Override
     public void filter(ContainerRequestContext requestContext, 
                        ContainerResponseContext responseContext) throws IOException {
-        LOGGER.info("📥 OUTGOING RESPONSE");
+        LOGGER.info("Outgoing Response");
         LOGGER.info("   Status: " + responseContext.getStatus());
         LOGGER.info("   Method: " + requestContext.getMethod());
         LOGGER.info("   URI: " + requestContext.getUriInfo().getAbsolutePath());
-        LOGGER.info("═══════════════════════════════════════");
+       
     }
 }

@@ -9,11 +9,12 @@ import javax.ws.rs.core.Application;
 import javax.ws.rs.ApplicationPath;
 /**
  *
- * @author maryam
+ * @author Maryam Yonis- w2117084 
+ * 
  */
 
 
 @ApplicationPath("/api/v1")
 public class CampusApplication extends Application {
-    // Empty - JAX-RS auto-discovers resources with @Path
+    
 }

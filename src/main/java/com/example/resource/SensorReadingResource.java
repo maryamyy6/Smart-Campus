@@ -53,12 +53,12 @@ public class SensorReadingResource {
             throw new SensorUnavailableException("Sensor is in MAINTENANCE mode - cannot accept new readings");
         }
         
-        // Generate ID if needed
+        // If needed generate ID
         if (reading.getId() == null || reading.getId().isEmpty()) {
             reading.setId(UUID.randomUUID().toString());
         }
         
-        // Set timestamp if needed
+        // If needed set timestamp
         if (reading.getTimestamp() == 0) {
             reading.setTimestamp(System.currentTimeMillis());
         }
